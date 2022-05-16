@@ -1,42 +1,226 @@
-.App {
-  text-align: center;
+:root {
+  --bg-light: #ECF2F8;
+  --white: #FFFFFF;
+  --gray: #48556A;
+  --light-gray: #6E8098;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Manrope';
+  font-style: normal;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  background: var(--bg-light);
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 100vh;
 }
 
-.App-link {
-  color: #61dafb;
+
+.container {
+  background: var(--white);
+  width: 730px;
+  height: 280px;
+  box-shadow: 0px 40px 40px -10px rgba(201, 213, 225, 0.503415);
+  border-radius: 10px;
+  display: flex;
+  position: relative;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.social-container {
+  position: absolute;
+  background: #48556A;
+  box-shadow: 0px 10px 10px rgba(201, 213, 225, 0.503415);
+  border-radius: 10px;
+  width: 248px;
+  height: 55px;
+  bottom: 96px;
+  right: -68px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.arrow-down {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-top: 12px solid #48556A;
+  bottom: 85px;
+  right: 45px;
+}
+
+.social-span {
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 20px;
+  letter-spacing: 5px;
+  color: #9DAEC2;
+
+}
+
+.left-img {
+  width: 285px;
+  height: 280px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.right {
+  padding: 32px 40px;
+}
+
+.right-header {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: 0.25px;
+  color: var(--gray);
+  margin-bottom: 12px;
+}
+
+.right-paragrahp {
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 20px;
+  letter-spacing: 0.121875px;
+  color: var(--light-gray);
+  margin-bottom: 20px;
+}
+
+.right-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left-bottom-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.left-bottom-container-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.left-bottom-container-wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.left-bottom-header {
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 20px;
+  letter-spacing: 0.121875px;
+  color: var(--gray);
+}
+
+.left-bottom-subtitle {
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 20px;
+  letter-spacing: 0.121875px;
+  color: #9DAEC2;
+
+}
+
+.img-container {
+  padding: 9px;
+  background: var(--bg-light);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.active {
+  background: var(--light-gray);
+}
+
+
+@media (max-width:375px) {
+  .container {
+    width: 327px;
+    height: 495px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
   }
-  to {
-    transform: rotate(360deg);
-  }
-}
 
-button {
-  font-size: calc(10px + 2vmin);
+  .left-img {
+    width: 327px;
+    height: 200px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 0;
+  }
+
+  .right-header {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.2px;
+    width: 266px;
+    height: 72px;
+  }
+
+  .right-paragrahp {
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 20px;
+    letter-spacing: 0.121875px;
+  }
+
+  .social-container {
+    position: absolute;
+    background: #48556A;
+    box-shadow: 0px 10px 10px rgba(201, 213, 225, 0.503415);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    width: 327px;
+    height: 64px;
+    bottom: 0px;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 32px;
+    gap: 16px;
+  }
+
+  .arrow-down {
+    display: none;
+  }
+
+  .img-container {
+    z-index: 2;
+  }
+
+  .img-container img {
+    z-index: 2;
+  }
+  .active{
+   background: #6E8098;
+   z-index: 2;
+  }
 }
